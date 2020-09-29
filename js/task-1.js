@@ -34,16 +34,34 @@
 </ul>
 Напиши скрипт, который выполнит следующие операции.
 
-Посчитает и выведет в консоль количество категорий в ul#categories, то есть элементов li.item. Получится 'В списке 3 категории.'.
+Посчитает и выведет в консоль количество категорий в ul#categories, то есть элементов
+ li.item. Получится 'В списке 3 категории.'.
 
-Для каждого элемента li.item в списке ul#categories, найдет и выведет в консоль текст заголовка элемента (тега h2) и количество элементов в категории (всех вложенных в него элементов li).
+Для каждого элемента li.item в списке ul#categories, найдет и выведет в консоль текст
+ заголовка элемента (тега h2) и количество элементов в категории (всех вложенных в него
+   элементов li).
 
 Например для первой категории получится:
 
 Категория: Животные
 Количество элементов: 4*/
 
-const button = document.querySelector(".item");
+const categories = document.querySelectorAll("li.item");
+console.log(`В списке ${categories.length} категории.`);
 
-button.style.backgroundColor = "teal";
-console.log(button.style); // объект инлайн стилей
+const titleEl = function (array) {
+  for (const categorie of categories) {
+    //console.log(categorie.textContent);
+    const hEl = categorie.querySelector("h2");
+    const listEl = categorie.querySelectorAll("li");
+
+    const message = `Категория: ${hEl.textContent}\nКоличество элементов: ${listEl.length}`;
+    console.log(message);
+    //return message;
+  }
+};
+console.log(titleEl(categories));
+
+/*array.forEach(categorie) => {(categorie.querySelector("h2"),
+  categorie.querySelectorAll("li")) => `Категория: ${categorie.querySelector("h2")}\nКоличество элементов: ${categorie.querySelectorAll("li").length}`;}
+   */
