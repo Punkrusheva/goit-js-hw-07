@@ -49,7 +49,14 @@
 const categories = document.querySelectorAll("li.item");
 console.log(`В списке ${categories.length} категории.`);
 
-const titleEl = function (array) {
+const titleEl = categories.forEach((categorie) =>
+  console.log(
+    `Категория: ${
+      categorie.querySelector("h2").textContent
+    }\nКоличество элементов: ${categorie.querySelectorAll("li").length}`
+  )
+);
+/*function (array) {
   for (const categorie of categories) {
     //console.log(categorie.textContent);
     const hEl = categorie.querySelector("h2");
@@ -58,10 +65,6 @@ const titleEl = function (array) {
     const message = `Категория: ${hEl.textContent}\nКоличество элементов: ${listEl.length}`;
     console.log(message);
     //return message;
+    
   }
-};
-console.log(titleEl(categories));
-
-/*array.forEach(categorie) => {(categorie.querySelector("h2"),
-  categorie.querySelectorAll("li")) => `Категория: ${categorie.querySelector("h2")}\nКоличество элементов: ${categorie.querySelectorAll("li").length}`;}
-   */
+};*/
