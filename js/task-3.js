@@ -27,7 +27,38 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
+/*
+const gallery = images.map((image) => {
+  const listEl = document.createElement("li");
+  const galleryItem = document.createElement("img");
+  listEl.classList.add("item");
 
+  galleryItem.src = image.url;
+  galleryItem.alt = image.alt;
+  galleryItem.width = 350;
+
+  listEl.appendChild(galleryItem);
+
+  const gallerylistEl = document.querySelector("#gallery");
+  gallerylistEl.appendChild(listEl);
+
+  //console.log(listEl);
+  return gallerylistEl;
+});
+
+console.log(gallery);*/
+const gallerylistEl = document.querySelector("#gallery");
+
+const gallery = (options) => {
+  const { url, alt } = options;
+  return `<li><img src="${url}" alt=${alt} class="item"></li>`;
+};
+//console.log(gallery(images));
+
+const galleryItem = images.map(gallery).join("");
+gallerylistEl.insertAdjacentHTML("beforeend", galleryItem);
+
+/*
 const gallery = images.map((image) => {
   const listEl = document.createElement("li");
   const galleryItem = document.createElement("img");
@@ -44,4 +75,4 @@ const gallery = images.map((image) => {
   return galleryItem;
 });
 
-//console.log(gallery);
+//console.log(gallery);*/
