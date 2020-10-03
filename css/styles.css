@@ -18,7 +18,24 @@
 
 div {
   text-align: center;
-  background-color: tomato;
+  background-color: #e6e6fa;
   border: 2px;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 5px;
+  border-radius: 30px;
+}
+
+input {
+  margin-left: 42px;
+}
+
+#text,
+h1 {
+  padding-left: 42px;
+}
+
+#counter {
+  background-color: #fff;
 }
