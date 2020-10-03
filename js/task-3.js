@@ -29,26 +29,7 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
-/*
-const gallery = images.map((image) => {
-  const listEl = document.createElement("li");
-  const galleryItem = document.createElement("img");
-  listEl.classList.add("item");
 
-  galleryItem.src = image.url;
-  galleryItem.alt = image.alt;
-  galleryItem.width = 350;
-
-  listEl.appendChild(galleryItem);
-
-  const gallerylistEl = document.querySelector("#gallery");
-  gallerylistEl.appendChild(listEl);
-
-  //console.log(listEl);
-  return gallerylistEl;
-});
-
-console.log(gallery);*/
 const gallerylistEl = document.querySelector("#gallery");
 
 const gallery = (options) => {
