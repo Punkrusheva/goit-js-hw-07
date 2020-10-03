@@ -23,23 +23,14 @@ const ingredients = [
   "Зелень",
   "Приправы",
 ];
-/*const listEl = document.querySelector("#ingredients");
-//console.log(listEl);
-const newIngredient = document.createElement("li");
-newIngredient.textContent = "ingredient";
-//console.log(newIngredient);
-listEl.appendChild(newIngredient);
-console.log(listEl);*/
+
+const listEl = document.querySelector("#ingredients");
 
 const newListItem = ingredients.map((ingredient) => {
-  const listEl = document.querySelector("#ingredients");
-  //console.log(listEl);
   const newIngredient = document.createElement("li");
   newIngredient.textContent = ingredient;
-  //console.log(newIngredient);
   listEl.appendChild(newIngredient);
-  //console.log(listEl);
 
-  return listEl;
+  return newIngredient;
 });
 console.log(newListItem);

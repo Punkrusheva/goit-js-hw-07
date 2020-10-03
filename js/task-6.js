@@ -31,14 +31,12 @@ validationInputEl.addEventListener("blur", onInputBlur);
 function onInputBlur() {
   validationInputEl.classList.add();
   if (
-    validationInputEl.value.length ===
-    Number(validationInputEl.getAttribute("data-length"))
+    validationInputEl.value.length === Number(validationInputEl.dataset.length)
   ) {
-    console.log("green");
-    console.log(validationInputEl.classList);
+    validationInputEl.classList.remove("invalid");
     validationInputEl.classList.add("valid");
   } else {
-    console.log("red");
+    validationInputEl.classList.remove("valid");
     validationInputEl.classList.add("invalid");
   }
 }

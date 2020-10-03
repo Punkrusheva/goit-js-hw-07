@@ -47,24 +47,13 @@
 Количество элементов: 4*/
 
 const categories = document.querySelectorAll("li.item");
+
 console.log(`В списке ${categories.length} категории.`);
 
-const titleEl = categories.forEach((categorie) =>
+const titleAndQuantityEl = categories.forEach((categorie) => {
+  const titleEl = categorie.querySelector("h2");
+  const quantityEl = categorie.querySelectorAll("li");
   console.log(
-    `Категория: ${
-      categorie.querySelector("h2").textContent
-    }\nКоличество элементов: ${categorie.querySelectorAll("li").length}`
-  )
-);
-/*function (array) {
-  for (const categorie of categories) {
-    //console.log(categorie.textContent);
-    const hEl = categorie.querySelector("h2");
-    const listEl = categorie.querySelectorAll("li");
-
-    const message = `Категория: ${hEl.textContent}\nКоличество элементов: ${listEl.length}`;
-    console.log(message);
-    //return message;
-    
-  }
-};*/
+    `Категория: ${titleEl.textContent}\nКоличество элементов: ${quantityEl.length}`
+  );
+});

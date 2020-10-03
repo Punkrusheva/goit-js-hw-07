@@ -15,11 +15,5 @@ console.log(TextToChangFontSize);
 rangeOfFontSize.addEventListener("input", rangeChangingFont);
 
 function rangeChangingFont() {
-  console.log(rangeOfFontSize.value);
-  TextToChangFontSize.setAttribute(
-    "style",
-    `font-size: ${rangeOfFontSize.value}px`
-  );
-  //TextToChangFontSize.setAttribute("font-size") = ;
+  TextToChangFontSize.style.fontSize = `${rangeOfFontSize.value}px`;
 }
-//`font-size: ${rangeOfFontSize.value}px`;

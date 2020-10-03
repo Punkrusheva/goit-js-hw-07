@@ -21,9 +21,9 @@ const counter = {
     this.value -= 1;
   },
 };
-const buttonArray = document.querySelectorAll("#counter > button");
-const decrementBtn = buttonArray[0];
-const incrementBtn = buttonArray[1];
+
+const decrementBtn = document.querySelector('[data-action="decrement"]');
+const incrementBtn = document.querySelector('[data-action="increment"]');
 const counterValue = document.querySelector("#value");
 
 decrementBtn.addEventListener("click", () => {
