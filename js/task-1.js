@@ -46,14 +46,18 @@
 Категория: Животные
 Количество элементов: 4*/
 
-const categories = document.querySelectorAll("li.item");
+const categories = document.querySelectorAll(".item");
 
 console.log(`В списке ${categories.length} категории.`);
 
-const titleAndQuantityEl = categories.forEach((categorie) => {
-  const titleEl = categorie.querySelector("h2");
+categories.forEach((categorie) => {
+  const titleEl = categorie.children[0].innerHTML;
+  const quantityEl = categorie.children[1].children.length;
+  console.log(`Категория: ${titleEl}\nКоличество элементов: ${quantityEl}`);
+});
+/* categories.forEach((categorie) => {
+const titleEl = categorie.querySelector("h2");
   const quantityEl = categorie.querySelectorAll("li");
   console.log(
     `Категория: ${titleEl.textContent}\nКоличество элементов: ${quantityEl.length}`
-  );
-});
+    }); */

@@ -12,28 +12,17 @@
   <span id="value">0</span>
   <button type="button" data-action="increment">+1</button>
 </div>*/
-const counter = {
-  value: 0,
-  increment() {
-    this.value += 1;
-  },
-  decrement() {
-    this.value -= 1;
-  },
-};
 
 const decrementBtn = document.querySelector('[data-action="decrement"]');
 const incrementBtn = document.querySelector('[data-action="increment"]');
 const counterValue = document.querySelector("#value");
 
 decrementBtn.addEventListener("click", () => {
-  counter.decrement();
-  console.log(counter);
-  counterValue.textContent = counter.value;
+  --counterValue.textContent;
+  console.log(counterValue.textContent);
 });
 
 incrementBtn.addEventListener("click", () => {
-  counter.increment();
-  console.log(counter);
-  counterValue.textContent = counter.value;
+  ++counterValue.textContent;
+  console.log(counterValue.textContent);
 });
